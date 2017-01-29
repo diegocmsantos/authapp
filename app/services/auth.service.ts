@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
+import { options } from '../auth.options';
 
 declare const Auth0Lock: any;
 
@@ -7,7 +8,7 @@ declare const Auth0Lock: any;
 export class Auth {
 
   // Configure Auth0
-  lock = new Auth0Lock('v9coxP6nRXFLscP9V1DJegYmWXyqkTdm', 'diegocmsantos.auth0.com', {});
+  lock = new Auth0Lock('v9coxP6nRXFLscP9V1DJegYmWXyqkTdm', 'diegocmsantos.auth0.com', options);
 
   constructor() {
 
