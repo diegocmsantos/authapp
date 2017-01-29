@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -15,7 +15,9 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a routerLink="/profile">Profile</a></li>
+            <li><a href="#" (click)="auth.login()" *ngIf="!auth.authenticated()">Login</a></li>
+            <li><a routerLink="/profile" *ngIf="auth.authenticated()">Profile</a></li>
+            <li><a href="#" (click)="auth.logout()" *ngIf="auth.authenticated()">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
